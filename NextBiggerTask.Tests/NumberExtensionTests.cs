@@ -15,7 +15,7 @@ namespace NextBiggerTask.Tests
         [TestCase(1234126, ExpectedResult = 1234162)]
         [TestCase(3456432, ExpectedResult = 3462345)]
         [TestCase(124121133, ExpectedResult = 124121313)]
-        public int? NextBiggerThan_With_Number_For_Which_Bigger_Number_Exists(int number)
+        public int? NextBiggerThan_NextBiggerNumberExists(int number)
             => NextBiggerThan(number);
 
         [TestCase(10, ExpectedResult = null)]
@@ -23,13 +23,13 @@ namespace NextBiggerTask.Tests
         [TestCase(2, ExpectedResult = null)]
         [TestCase(2000, ExpectedResult = null)]
         [TestCase(111111111, ExpectedResult = null)]
-        public int? NextBiggerThan_With_Number_For_Which_Bigger_Number_Does_Not_Exist(int number)
+        public int? NextBiggerThan_NextBiggerNumberDoesNotExist(int number)
             => NextBiggerThan(number);
 
         [TestCase(-1)]
         [TestCase(-10)]
         [TestCase(int.MinValue)]
-        public void NextBiggerThan_With_Negative_Number_ThrowArgumentException(int number)
+        public void NextBiggerThan_WithNegativeNumber_ThrowArgumentException(int number)
             => Assert.Throws<ArgumentException>(() => NextBiggerThan(number),
                 message: $"Value of {nameof(number)} cannot be less zero.");
 
