@@ -10,7 +10,7 @@ namespace NextBiggerTask
         /// </summary>
         /// <param name="number">Source number.</param>
         /// <returns>
-        /// The nearest largest integer consisting of the digits of the original number,
+        /// The nearest largest integer consisting of the digits of the original number
         /// and null if no such number exists.
         /// </returns>
         /// <exception cref="ArgumentException">Thrown if source number less than zero.</exception>
