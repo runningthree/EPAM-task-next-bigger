@@ -2,6 +2,8 @@ using System;
 using NUnit.Framework;
 using static NextBiggerTask.NumberExtension;
 
+#pragma warning disable CA1707
+
 namespace NextBiggerTask.Tests
 {
     public class NumberExtensionTests
@@ -30,8 +32,6 @@ namespace NextBiggerTask.Tests
         [TestCase(-10)]
         [TestCase(int.MinValue)]
         public void NextBiggerThan_WithNegativeNumber_ThrowArgumentException(int number)
-            => Assert.Throws<ArgumentException>(() => NextBiggerThan(number),
-                message: $"Value of {nameof(number)} cannot be less zero.");
-
+            => Assert.Throws<ArgumentException>(() => NextBiggerThan(number), message: $"Value of {nameof(number)} cannot be less zero.");
     }
 }
